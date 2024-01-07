@@ -90,6 +90,42 @@ def assess_game(user_action, computer_action):
         else:
             print("Rock smashes scissors. You lost!")
             game_result = GameResult.Defeat
+        
+    # You picked Lizard
+    elif user_action == GameAction.Lizard:
+        if computer_action == GameAction.Paper:
+            print("Lizard eats paper. You won!")
+            game_result = GameResult.Victory
+
+        elif computer_action == GameAction.Spock:
+            print("Lizard poisons spock. You won!")
+            game_result = GameResult.Victory
+
+        elif computer_action == GameAction.Scissors:
+            print("Scissors decapitates lizard. You lost!")
+            game_result = GameResult.Defeat
+
+        else:
+            print("Rock crushes lizard. You lost!")
+            game_result = GameResult.Defeat
+    
+    # You picked Spock
+    elif user_action == GameAction.Spock:
+        if computer_action == GameAction.Rock:
+            print("Spock vaporizes rock. You won!")
+            game_result = GameResult.Victory
+
+        elif computer_action == GameAction.Scissors:
+            print("Spock smashes scissors. You won!")
+            game_result = GameResult.Victory
+
+        elif computer_action == GameAction.Lizard:
+            print("Lizard poisons spock. You lost!")
+            game_result = GameResult.Defeat
+
+        else:
+            print("Paper disproves spock. You lost!")
+            game_result = GameResult.Defeat
 
     return game_result
 
@@ -100,7 +136,7 @@ def get_computer_action(user_actions_list):
         computer_action = GameAction(1)
     else:
         new_user_action = Counter(user_actions_list)
-        preferencia = ['Rock', 'Paper', 'Scissors']
+        preferencia = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock']
         max_value = max(new_user_action.values())
         empate = list(new_user_action.values()).count(max_value)
 
