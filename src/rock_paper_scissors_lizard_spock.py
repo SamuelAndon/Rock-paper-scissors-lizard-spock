@@ -6,6 +6,8 @@ class GameAction(IntEnum):
     Rock = 0
     Paper = 1
     Scissors = 2
+    Lizard = 3
+    Spock = 4
 
 
 class GameResult(IntEnum):
@@ -16,8 +18,15 @@ class GameResult(IntEnum):
 
 Victories = {
     GameAction.Rock: GameAction.Paper,
+    GameAction.Spock: GameAction.Paper,
     GameAction.Paper: GameAction.Scissors,
-    GameAction.Scissors: GameAction.Rock
+    GameAction.Lizard: GameAction.Scissors,
+    GameAction.Scissors: GameAction.Rock,
+    GameAction.Lizard: GameAction.Rock,
+    GameAction.Spock: GameAction.Lizard,
+    GameAction.Paper: GameAction.Lizard,
+    GameAction.Rock: GameAction.Spock,
+    GameAction.Scissors: GameAction.Spock
 }
 
 def assess_game(user_action, computer_action):
