@@ -137,7 +137,11 @@ def get_computer_action(user_actions_list, n_games):
 
         if empate > 1:
             action_final = min(new_user_action, key=lambda x: preferencia.index(GameAction(x).name))
-            computer_action = random.choice(Victories[action_final])
+            if n_games%2 == 0:
+                computer_action = Victories[action_final][0]
+            else:
+                computer_action = Victories[action_final][1]
+            print(f"Computer picked {computer_action.name}.")
         else:
             action_final = max(new_user_action, key=lambda x: new_user_action[x])
             if n_games%2 == 0:
