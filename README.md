@@ -29,6 +29,30 @@ En este juego al haber dos posibles opciones de victoria hacia un movimiento, im
 
 Además, implementé un contador de victorias que se va incrementando por cada victoria del usuario, indicandole al final el numero de partidas jugadas y cuantas dellas ganó.
 
+## Instalación
+
+1. Creamos un directorio y nos situamos en él
+```
+mkdir rock_paper_scissors_lizard_spock
+cd rock_paper_scissors_lizard_spock
+```
+
+2. Clonamos el proyecto
+```
+git clone https://github.com/SamuelAndon/Rock-paper-scissors-lizard-spock.git
+```
+
+3. Creamos un entorno virtual con python 3.9 y lo activamos
+```
+conda create --name RPSLS python=3.9
+conda activate RPSLS
+```
+
+4. Por último instalamos el requirements.txt 
+```
+conda install --file requirements.txt
+```  
+
 ## Bibliografía
 
 - Inteligencia Artificial un enfoque moderno, 2da Ed (Stuart Russell y Peter Norvig)
